@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Brand tokens ---------- */
+:root {
+  --red: #ee3135;
+  --yellow: #ffd600;
+  --orange: #f58c3d;
+  --white: #ffffff;
+  --black: #202020;
+
+  /* Type — Google Font stand-ins now; swap @font-face later (see TODO below). */
+  --font-display: "Bangers", system-ui, sans-serif;
+  --font-label: "Barlow Condensed", system-ui, sans-serif;
+  --font-body: "Barlow", system-ui, sans-serif;
+}
+
+/* TODO: when brand brush/marker font files arrive, drop them here and override --font-display.
+   Example:
+   @font-face {
+     font-family: "WingsStadiumDisplay";
+     src: url("/fonts/wings-display.woff2") format("woff2");
+     font-display: swap;
+   }
+   :root { --font-display: "WingsStadiumDisplay", system-ui, sans-serif; }
+*/
+
+html, body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--red); color: var(--white); }
+
+/* ---------- Utilities ---------- */
+@layer utilities {
+  .text-heat {
+    background: linear-gradient(90deg, var(--yellow) 0%, var(--orange) 45%, var(--red) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .ring-heat {
+    box-shadow:
+      0 0 0 1px rgba(255,214,0,0.25),
+      0 10px 30px -10px rgba(238,49,53,0.55);
+  }
+  .grain {
+    position: relative;
+  }
+  .grain::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 1px 2px;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    opacity: 0.6;
+  }
+  .stadium-bg {
+    background:
+      radial-gradient(60% 80% at 50% 0%, rgba(245,140,61,0.18) 0%, transparent 60%),
+      radial-gradient(40% 50% at 90% 30%, rgba(238,49,53,0.18) 0%, transparent 60%),
+      radial-gradient(60% 60% at 10% 80%, rgba(255,214,0,0.10) 0%, transparent 60%),
+      var(--black);
+  }
+  .heading-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+    line-height: 0.95;
+  }
+  .heading-label {
+    font-family: var(--font-label);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+/* Focus styles — accessibility */
+:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
