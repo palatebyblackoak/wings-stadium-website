@@ -5,10 +5,11 @@ import { weeklyByDay } from "@/data/specials";
 import type { DayKey } from "@/data/business";
 import { todayKey } from "@/lib/days";
 import { SpecialCard } from "./SpecialCard";
+import { SectionTag } from "./SectionTag";
 
 export function TonightAtStadium() {
   // Render a stable shell on the server, then hydrate to today's lineup.
-  // This avoids SSR/CSR day-mismatch from server timezone vs. user's local day.
+  // Avoids SSR/CSR day-mismatch from server timezone vs. user's local day.
   const [day, setDay] = useState<DayKey | null>(null);
 
   useEffect(() => {
@@ -20,17 +21,20 @@ export function TonightAtStadium() {
   return (
     <section
       aria-labelledby="tonight-heading"
-      className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent p-5 sm:p-8"
+      className="relative rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent p-5 sm:p-8"
     >
       <div className="flex items-end justify-between gap-4 flex-wrap">
         <div>
-          <div className="heading-label text-xs text-yellow-brand">Tonight at the Stadium</div>
-          <h2 id="tonight-heading" className="heading-display text-3xl sm:text-5xl text-white mt-1">
+          <SectionTag color="red" tilt={1.5} size="sm">Tonight at the Stadium</SectionTag>
+          <h2
+            id="tonight-heading"
+            className="heading-display text-4xl sm:text-6xl text-white mt-4"
+          >
             {lineup ? lineup.theme ?? lineup.label : "What's on tonight"}
           </h2>
         </div>
         {lineup?.liveDj && (
-          <span className="font-label text-xs tracking-widest text-ink bg-yellow-brand px-3 py-1.5 rounded-full">
+          <span className="font-display text-base tracking-wider text-ink bg-yellow-brand px-4 py-1.5 rounded-full">
             LIVE DJ
           </span>
         )}

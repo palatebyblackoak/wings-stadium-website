@@ -1,15 +1,20 @@
 import type { BarSection } from "@/data/barMenu";
+import { SectionTag } from "./SectionTag";
 
-export function BarMenuSection({ section }: { section: BarSection }) {
+export function BarMenuSection({
+  section,
+  tilt = -2,
+}: {
+  section: BarSection;
+  tilt?: number;
+}) {
   return (
     <section id={section.id} className="scroll-mt-24">
-      <header className="mb-5 flex items-baseline justify-between gap-3 flex-wrap">
+      <header className="mb-6 flex items-end justify-between gap-3 flex-wrap">
         <div>
-          <h2 className="heading-display text-3xl sm:text-5xl text-white">
-            {section.title}
-          </h2>
+          <SectionTag size="lg" tilt={tilt}>{section.title}</SectionTag>
           {section.subtitle && (
-            <div className="heading-label text-xs sm:text-sm text-yellow-brand mt-1">
+            <div className="font-display text-base sm:text-lg text-yellow-brand mt-3 tracking-wider">
               {section.subtitle}
             </div>
           )}
@@ -30,11 +35,11 @@ export function BarMenuSection({ section }: { section: BarSection }) {
               className="rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] transition-colors p-4 sm:p-5"
             >
               <div className="flex items-baseline justify-between gap-3">
-                <h3 className="font-label text-white text-base sm:text-lg uppercase tracking-wider">
+                <h3 className="font-display text-white text-xl sm:text-2xl uppercase tracking-wider">
                   {it.name}
                 </h3>
                 {it.price && (
-                  <span className="font-label text-sm text-yellow-brand shrink-0">
+                  <span className="font-display text-lg text-yellow-brand shrink-0">
                     {it.price}
                   </span>
                 )}
@@ -58,7 +63,7 @@ export function BarMenuSection({ section }: { section: BarSection }) {
               className="flex items-baseline justify-between gap-3 px-4 sm:px-5 py-3"
             >
               <div>
-                <span className="font-label text-white text-base uppercase tracking-wider">
+                <span className="font-display text-white text-lg sm:text-xl uppercase tracking-wider">
                   {it.name}
                 </span>
                 {it.description && (
@@ -68,7 +73,9 @@ export function BarMenuSection({ section }: { section: BarSection }) {
                 )}
               </div>
               {it.price && (
-                <span className="font-label text-yellow-brand shrink-0">{it.price}</span>
+                <span className="font-display text-lg text-yellow-brand shrink-0">
+                  {it.price}
+                </span>
               )}
             </li>
           ))}
@@ -81,7 +88,7 @@ export function BarMenuSection({ section }: { section: BarSection }) {
           {section.names.map((n) => (
             <li
               key={n}
-              className="rounded-full border border-white/15 bg-white/[0.04] px-3.5 py-1.5 text-sm text-white/90 font-body"
+              className="rounded-full border border-white/15 bg-white/[0.04] px-3.5 py-1.5 text-sm text-white/90 font-body font-semibold"
             >
               {n}
             </li>
@@ -97,10 +104,12 @@ export function BarMenuSection({ section }: { section: BarSection }) {
               key={g.heading}
               className="rounded-xl border border-white/10 bg-white/[0.03] p-4 sm:p-5"
             >
-              <div className="heading-label text-xs text-yellow-brand">{g.heading}</div>
+              <div className="font-display text-yellow-brand text-lg tracking-wider">
+                {g.heading}
+              </div>
               <ul className="mt-3 space-y-1.5">
                 {g.names.map((n) => (
-                  <li key={n} className="font-body text-white/85 text-sm">
+                  <li key={n} className="font-body font-semibold text-white/85 text-sm">
                     {n}
                   </li>
                 ))}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CTAButton } from "@/components/CTAButton";
 import { PhotoSlot } from "@/components/PhotoSlot";
+import { SectionTag } from "@/components/SectionTag";
 import { foodTeaser } from "@/data/foodTeaser";
 
 export const metadata: Metadata = {
@@ -15,8 +16,8 @@ export default function MenuHub() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-16">
       <header className="mb-10">
-        <div className="heading-label text-xs text-yellow-brand">The Menu</div>
-        <h1 className="heading-display text-5xl sm:text-7xl text-white mt-1">
+        <SectionTag size="md" tilt={-2}>The Menu</SectionTag>
+        <h1 className="heading-display text-5xl sm:text-7xl text-white mt-6">
           Pick Your <span className="text-heat">Side</span>
         </h1>
         <p className="font-body text-white/80 max-w-2xl mt-4 text-base sm:text-lg">
@@ -33,9 +34,9 @@ export default function MenuHub() {
             filePath="/public/photos/menu-food.jpg"
             aspect="aspect-[16/9]"
           />
-          <div className="p-6 sm:p-8">
-            <div className="heading-label text-xs text-yellow-brand">Food</div>
-            <h2 className="heading-display text-3xl sm:text-4xl text-white mt-1">
+          <div className="p-6 sm:p-8 relative">
+            <SectionTag size="sm" tilt={-2}>Food</SectionTag>
+            <h2 className="heading-display text-3xl sm:text-4xl text-white mt-5">
               The Food Menu
             </h2>
             <p className="font-body text-white/75 mt-3">
@@ -52,7 +53,7 @@ export default function MenuHub() {
                       : "border-white/10 bg-white/[0.02]"
                   } px-3 py-2`}
                 >
-                  <div className="font-label text-white text-sm">{c.name}</div>
+                  <div className="font-display text-white text-base">{c.name}</div>
                   <div className="font-body text-xs text-white/60">{c.note}</div>
                 </li>
               ))}
@@ -64,7 +65,7 @@ export default function MenuHub() {
               </CTAButton>
               <Link
                 href="/specials"
-                className="font-label uppercase tracking-wider text-white/70 hover:text-white px-3 py-3"
+                className="font-display uppercase tracking-wider text-white/70 hover:text-white px-3 py-3"
               >
                 See Daily Specials →
               </Link>
@@ -82,9 +83,9 @@ export default function MenuHub() {
             filePath="/public/photos/menu-bar.jpg"
             aspect="aspect-[16/9]"
           />
-          <div className="p-6 sm:p-8">
-            <div className="heading-label text-xs text-yellow-brand">Bar</div>
-            <h2 className="heading-display text-3xl sm:text-4xl text-white mt-1">
+          <div className="p-6 sm:p-8 relative">
+            <SectionTag size="sm" color="red" tilt={1.5}>Bar</SectionTag>
+            <h2 className="heading-display text-3xl sm:text-4xl text-white mt-5">
               The Bar Menu
             </h2>
             <p className="font-body text-white/75 mt-3">
@@ -105,7 +106,7 @@ export default function MenuHub() {
               ].map((s) => (
                 <li
                   key={s}
-                  className="rounded-lg border border-white/10 bg-white/[0.02] px-3 py-2 font-label text-white text-sm"
+                  className="rounded-lg border border-white/10 bg-white/[0.02] px-3 py-2 font-display text-white text-base"
                 >
                   {s}
                 </li>

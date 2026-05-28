@@ -1,5 +1,14 @@
 import type { DayLineup } from "@/data/specials";
 
+/* Decorate the high-energy DJ nights with a hand-gesture sticker, echoing the
+   printed menu's use of brush illustrations as section accents. */
+function gestureFor(day: DayLineup): string | null {
+  if (day.key === "wed") return "/marketing/gesture-fist.png";
+  if (day.key === "thu") return "/marketing/gesture-peace.png";
+  if (day.key === "fri") return "/marketing/gesture-rock.png";
+  return null;
+}
+
 export function SpecialCard({
   day,
   highlighted = false,
@@ -10,6 +19,7 @@ export function SpecialCard({
   className?: string;
 }) {
   const isHero = day.highPriority || highlighted;
+  const gesture = gestureFor(day);
 
   return (
     <article
@@ -18,20 +28,37 @@ export function SpecialCard({
       } bg-white/[0.03] hover:bg-white/[0.05] transition-colors p-5 sm:p-6 overflow-hidden ${className}`}
     >
       {isHero && (
-        <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-red-brand/20 blur-3xl" aria-hidden />
+        <div
+          className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-red-brand/20 blur-3xl"
+          aria-hidden
+        />
       )}
+
+      {gesture && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={gesture}
+          alt=""
+          aria-hidden
+          className="pointer-events-none absolute -right-3 -bottom-3 w-24 sm:w-28 opacity-25 group-hover:opacity-40 transition-opacity duration-200 rotate-[14deg]"
+          style={{ filter: "brightness(0) invert(1)" }}
+        />
+      )}
+
       <div className="relative flex items-start justify-between gap-3">
         <div>
-          <div className="heading-label text-xs text-yellow-brand">{day.shortLabel}</div>
-          <h3 className="heading-display text-2xl sm:text-3xl text-white mt-1">
+          <span className="inline-block font-display text-sm tracking-widest bg-yellow-brand text-ink px-2.5 py-0.5 rounded-md">
+            {day.shortLabel}
+          </span>
+          <h3 className="heading-display text-3xl sm:text-4xl text-white mt-3">
             {day.theme ?? day.label}
           </h3>
           {day.subtitle && (
-            <p className="font-body text-sm text-white/60 mt-1">{day.subtitle}</p>
+            <p className="font-body text-sm text-white/65 mt-1">{day.subtitle}</p>
           )}
         </div>
         {day.liveDj && (
-          <span className="shrink-0 text-[10px] sm:text-xs font-label tracking-widest text-ink bg-yellow-brand px-2.5 py-1 rounded-full">
+          <span className="shrink-0 text-xs font-display tracking-widest text-ink bg-yellow-brand px-3 py-1.5 rounded-full">
             LIVE DJ
           </span>
         )}
@@ -50,7 +77,7 @@ export function SpecialCard({
             >
               {s.price && (
                 <span
-                  className={`font-label text-sm sm:text-base px-2 py-0.5 rounded ${
+                  className={`font-display text-base sm:text-lg px-2.5 py-0.5 rounded ${
                     s.emphasis
                       ? "bg-heat text-ink"
                       : "border border-white/15 text-yellow-brand"

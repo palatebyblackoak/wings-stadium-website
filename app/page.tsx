@@ -7,13 +7,16 @@ import { SpecialsGrid } from "@/components/SpecialsGrid";
 import { LocationStrip } from "@/components/LocationStrip";
 import { Logo } from "@/components/Logo";
 import { PhotoSlot } from "@/components/PhotoSlot";
+import { SectionTag } from "@/components/SectionTag";
+import { ScribbleBg } from "@/components/ScribbleBg";
 
 export default function HomePage() {
   return (
     <>
       {/* HERO */}
       <section className="relative stadium-bg grain overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-20 sm:pt-20 sm:pb-28 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <ScribbleBg />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-20 sm:pt-20 sm:pb-28 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative">
           <div className="lg:col-span-7 animate-riseIn">
             <div className="mb-8">
               <Logo variant="dark" height={120} className="max-w-[420px] sm:max-w-[520px]" />
@@ -43,7 +46,16 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 relative">
+            {/* Football sticker tucked behind the photo */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/marketing/sport-football.png"
+              alt=""
+              aria-hidden
+              className="absolute -top-8 -right-4 w-24 sm:w-32 rotate-[18deg] z-10 drop-shadow-[0_8px_20px_rgba(245,140,61,0.5)]"
+              style={{ filter: "brightness(0) invert(1)" }}
+            />
             <PhotoSlot
               label="Hero shot — wings, drafts, and a game on the wall"
               filePath="/public/photos/hero.jpg"
@@ -67,10 +79,10 @@ export default function HomePage() {
 
         {/* WEEKLY SPECIALS SNAPSHOT */}
         <section>
-          <div className="flex items-end justify-between gap-4 flex-wrap mb-6">
+          <div className="flex items-end justify-between gap-4 flex-wrap mb-8">
             <div>
-              <div className="heading-label text-xs text-yellow-brand">The Week</div>
-              <h2 className="heading-display text-4xl sm:text-5xl text-white">
+              <SectionTag size="md" tilt={-1.5}>The Week</SectionTag>
+              <h2 className="heading-display text-5xl sm:text-6xl text-white mt-5">
                 Every Night Hits Different
               </h2>
             </div>

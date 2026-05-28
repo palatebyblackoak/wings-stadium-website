@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { business } from "@/data/business";
+import { SectionTag } from "./SectionTag";
 
 export function LocationStrip() {
   return (
-    <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-7 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+    <section className="relative rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-7 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
       <div>
-        <div className="heading-label text-xs text-yellow-brand">Find Us</div>
-        <p className="heading-display text-2xl sm:text-3xl text-white mt-1">
+        <SectionTag size="sm" tilt={-2}>Find Us</SectionTag>
+        <p className="heading-display text-3xl sm:text-4xl text-white mt-4">
           {business.address.street}, {business.address.city}, {business.address.region}
         </p>
         <p className="font-body text-white/70 mt-1">
@@ -18,19 +19,19 @@ export function LocationStrip() {
           href={business.directionsUrl}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center justify-center font-label uppercase tracking-wider rounded-md bg-heat text-ink px-5 py-3 ring-heat hover:brightness-110 transition"
+          className="inline-flex items-center justify-center font-display uppercase tracking-wider rounded-md bg-heat text-ink px-5 py-3 ring-heat hover:brightness-110 transition"
         >
           Get Directions
         </a>
         <a
           href={`tel:${business.phoneE164}`}
-          className="inline-flex items-center justify-center font-label uppercase tracking-wider rounded-md border-2 border-white/80 text-white px-5 py-3 hover:bg-white hover:text-ink transition"
+          className="inline-flex items-center justify-center font-display uppercase tracking-wider rounded-md border-2 border-white/80 text-white px-5 py-3 hover:bg-white hover:text-ink transition"
         >
           Call {business.phone}
         </a>
         <Link
           href="/visit"
-          className="inline-flex items-center justify-center font-label uppercase tracking-wider rounded-md text-white/70 hover:text-white px-3 py-3"
+          className="inline-flex items-center justify-center font-display uppercase tracking-wider text-white/70 hover:text-white px-3 py-3"
         >
           Visit page →
         </Link>

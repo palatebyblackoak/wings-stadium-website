@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { business } from "@/data/business";
 import { HoursTable } from "@/components/HoursTable";
 import { GoogleBadge } from "@/components/GoogleBadge";
+import { SectionTag } from "@/components/SectionTag";
 
 export const metadata: Metadata = {
   title: "Visit — 5000 Pecan Blvd, McAllen, TX",
@@ -14,8 +15,8 @@ export default function VisitPage() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-16">
       <header className="mb-10">
-        <div className="heading-label text-xs text-yellow-brand">Find Us</div>
-        <h1 className="heading-display text-5xl sm:text-7xl text-white mt-1">
+        <SectionTag size="md" tilt={-2}>Find Us</SectionTag>
+        <h1 className="heading-display text-5xl sm:text-7xl text-white mt-6">
           Visit the <span className="text-heat">Stadium</span>
         </h1>
         <p className="font-body text-white/80 max-w-2xl mt-4 text-base sm:text-lg">
@@ -41,8 +42,8 @@ export default function VisitPage() {
         {/* DETAILS */}
         <aside className="lg:col-span-2 space-y-5">
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-            <div className="heading-label text-xs text-yellow-brand">Address</div>
-            <address className="not-italic mt-2 heading-display text-2xl text-white">
+            <SectionTag size="sm" tilt={-1.5}>Address</SectionTag>
+            <address className="not-italic mt-4 heading-display text-2xl text-white">
               {business.address.street}<br />
               {business.address.city}, {business.address.region} {business.address.postal}
             </address>
@@ -51,13 +52,13 @@ export default function VisitPage() {
                 href={business.directionsUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center font-label uppercase tracking-wider rounded-md bg-heat text-ink px-4 py-3 ring-heat hover:brightness-110 transition"
+                className="inline-flex items-center justify-center font-display uppercase tracking-wider rounded-md bg-heat text-ink px-4 py-3 ring-heat hover:brightness-110 transition"
               >
                 Get Directions
               </a>
               <a
                 href={`tel:${business.phoneE164}`}
-                className="inline-flex items-center justify-center font-label uppercase tracking-wider rounded-md border-2 border-white/80 text-white px-4 py-3 hover:bg-white hover:text-ink transition"
+                className="inline-flex items-center justify-center font-display uppercase tracking-wider rounded-md border-2 border-white/80 text-white px-4 py-3 hover:bg-white hover:text-ink transition"
               >
                 Call
               </a>
@@ -71,15 +72,15 @@ export default function VisitPage() {
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-            <div className="heading-label text-xs text-yellow-brand">Hours</div>
-            <div className="mt-3">
+            <SectionTag size="sm" color="red" tilt={1.5}>Hours</SectionTag>
+            <div className="mt-4">
               <HoursTable />
             </div>
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-            <div className="heading-label text-xs text-yellow-brand">Reviews</div>
-            <p className="font-body text-white/80 mt-2 text-sm">
+            <SectionTag size="sm" tilt={-1.5}>Reviews</SectionTag>
+            <p className="font-body text-white/80 mt-4 text-sm">
               Loved your visit? It takes 20 seconds and it actually helps.
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-3">
@@ -88,7 +89,7 @@ export default function VisitPage() {
                 href={business.reviewUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="font-label uppercase tracking-wider text-yellow-brand hover:text-white"
+                className="font-display uppercase tracking-wider text-yellow-brand hover:text-white"
               >
                 Leave a Review →
               </a>
@@ -96,8 +97,8 @@ export default function VisitPage() {
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-            <div className="heading-label text-xs text-yellow-brand">Follow</div>
-            <ul className="mt-3 space-y-2 text-sm">
+            <SectionTag size="sm" tilt={1.5}>Follow</SectionTag>
+            <ul className="mt-4 space-y-2 text-sm">
               <li>
                 <a className="text-white/85 hover:text-white" href={business.social.facebook} target="_blank" rel="noreferrer">
                   Facebook · @THEWINGSSPORTSBAR
@@ -119,15 +120,15 @@ export default function VisitPage() {
       </section>
 
       <section className="mt-12 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-7">
-        <div className="heading-label text-xs text-yellow-brand">What We Do</div>
-        <h2 className="heading-display text-3xl sm:text-4xl text-white mt-1">
+        <SectionTag size="sm" tilt={-1.5}>What We Do</SectionTag>
+        <h2 className="heading-display text-3xl sm:text-4xl text-white mt-5">
           Built for game days and late nights
         </h2>
         <ul className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-2">
           {business.services.map((s) => (
             <li
               key={s}
-              className="rounded-md border border-white/10 bg-white/[0.02] px-3 py-2 font-label text-sm text-white/90"
+              className="rounded-md border border-white/10 bg-white/[0.02] px-3 py-2 font-display text-base text-white/90"
             >
               {s}
             </li>
