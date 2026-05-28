@@ -1,4 +1,5 @@
 import { PhotoSlot } from "./PhotoSlot";
+import { SportIconsRow } from "./SportIconsRow";
 
 export function CatchEveryGame() {
   return (
@@ -14,7 +15,10 @@ export function CatchEveryGame() {
           Walls of screens, real sound, and a crowd that actually cheers. The stadium
           energy without the ticket price.
         </p>
-        <ul className="mt-5 space-y-2 text-white/80">
+
+        <SportIconsRow size={52} className="mt-7" />
+
+        <ul className="mt-7 space-y-2 text-white/80">
           <li>• Multi-screen sightlines from every booth</li>
           <li>• Sound on for the marquee game</li>
           <li>• Wings + drafts in your hand before kickoff</li>
