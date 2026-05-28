@@ -10,10 +10,12 @@
   --white: #ffffff;
   --black: #202020;
 
-  /* Type — Google Font stand-ins now; swap @font-face later (see TODO below). */
-  --font-display: "Bangers", system-ui, sans-serif;
-  --font-label: "Barlow Condensed", system-ui, sans-serif;
-  --font-body: "Barlow", system-ui, sans-serif;
+  /* Type — Google Font stand-ins matched to brand sample sheet.
+     Swap to the real foundry files via @font-face below when you send them. */
+  --font-display: "Permanent Marker", "Bangers", system-ui, sans-serif;  /* TITLE / HEADING — brush */
+  --font-script: "Caveat", "Permanent Marker", cursive;                  /* Subtitle — handwritten */
+  --font-label: "Bowlby One", "Barlow Condensed", system-ui, sans-serif; /* Section header — chunky condensed */
+  --font-body: "Open Sans", system-ui, sans-serif;                       /* Subheading / body */
 }
 
 /* TODO: when brand brush/marker font files arrive, drop them here and override --font-display.
@@ -77,9 +79,14 @@ html, body {
   }
   .heading-label {
     font-family: var(--font-label);
-    letter-spacing: 0.12em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 400; /* Bowlby One only ships at 400 — already chunky */
+  }
+  .heading-script {
+    font-family: var(--font-script);
+    font-weight: 600;
+    letter-spacing: 0;
   }
 }
 

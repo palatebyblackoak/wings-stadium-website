@@ -47,13 +47,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* Google Fonts stand-ins. Swap --font-display in globals.css when the
-            brand brush/marker font arrives. */}
+        {/* Google Fonts — closest matches to the brand sample sheet. Swap any
+            family by updating --font-display / --font-script / --font-label /
+            --font-body in app/globals.css. */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:wght@700&family=Barlow:wght@400;500;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Caveat:wght@500;700&family=Bowlby+One&family=Open+Sans:wght@400;500;600;700&display=swap"
         />
         <script
           type="application/ld+json"

@@ -18,7 +18,7 @@ export function Nav() {
     <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-ink/75 bg-ink/95 border-b border-white/10">
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 h-16">
         <Link href="/" className="flex items-center" aria-label="The Wings Stadium — home">
-          <Logo variant="dark" size={38} />
+          <Logo variant="dark" height={36} />
         </Link>
 
         <div className="hidden md:flex items-center gap-6">

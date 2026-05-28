@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="mt-24 border-t border-white/10 bg-black">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
-          <Logo variant="dark" size={42} />
+          <Logo variant="dark" height={56} />
           <p className="mt-4 text-white/70 text-sm leading-relaxed">
             {business.positioning}
           </p>
@@ -54,9 +54,8 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-5 text-white/40 text-xs flex flex-col sm:flex-row sm:justify-between gap-2">
-          <span>© {new Date().getFullYear()} {business.name}. All rights reserved.</span>
-          <span>{business.tagline}</span>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-5 text-white/40 text-xs">
+          © {new Date().getFullYear()} {business.name}. All rights reserved.
         </div>
       </div>
     </footer>

@@ -6,7 +6,6 @@ import { TonightAtStadium } from "@/components/TonightAtStadium";
 import { SpecialsGrid } from "@/components/SpecialsGrid";
 import { LocationStrip } from "@/components/LocationStrip";
 import { Logo } from "@/components/Logo";
-import { business } from "@/data/business";
 import { PhotoSlot } from "@/components/PhotoSlot";
 
 export default function HomePage() {
@@ -16,13 +15,10 @@ export default function HomePage() {
       <section className="relative stadium-bg grain overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-20 sm:pt-20 sm:pb-28 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7 animate-riseIn">
-            <div className="mb-7 flex items-center gap-3">
-              <Logo variant="dark" size={64} />
+            <div className="mb-8">
+              <Logo variant="dark" height={120} className="max-w-[420px] sm:max-w-[520px]" />
             </div>
-            <p className="heading-label text-yellow-brand text-sm tracking-[0.3em]">
-              {business.tagline}
-            </p>
-            <h1 className="heading-display text-white text-[44px] sm:text-[72px] lg:text-[96px] mt-3">
+            <h1 className="heading-display text-white text-[44px] sm:text-[72px] lg:text-[96px] mt-2">
               Where McAllen
               <br />
               <span className="text-heat">watches the game.</span>
