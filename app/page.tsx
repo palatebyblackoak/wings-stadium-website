@@ -18,15 +18,8 @@ export default function HomePage() {
           alt="The Wings Stadium — 5000 Pecan Blvd, McAllen"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        {/* Legibility gradient — dark at bottom, lighter at top */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.85) 100%)",
-          }}
-          aria-hidden
-        />
+        {/* Legibility scrim — flat dark overlay, no gradient. */}
+        <div className="absolute inset-0 bg-black/55" aria-hidden />
 
         {/* Foreground */}
         <div className="relative max-w-6xl mx-auto w-full px-4 sm:px-6 pb-14 sm:pb-20 animate-riseIn">

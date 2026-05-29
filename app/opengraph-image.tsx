@@ -13,8 +13,6 @@ export default function OG() {
           width: "100%",
           height: "100%",
           background: "#202020",
-          backgroundImage:
-            "radial-gradient(60% 80% at 50% 0%, rgba(245,140,61,0.4) 0%, transparent 60%), radial-gradient(40% 60% at 90% 70%, rgba(238,49,53,0.3) 0%, transparent 60%)",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
@@ -38,11 +36,11 @@ export default function OG() {
               width: 56,
               height: 56,
               borderRadius: 12,
-              background: "linear-gradient(135deg,#ffd600,#f58c3d,#ee3135)",
+              background: "#ee3135",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "#202020",
+              color: "#ffffff",
               fontSize: 38,
               fontWeight: 900,
             }}
@@ -53,7 +51,7 @@ export default function OG() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 24, color: "#ffd600", letterSpacing: 8 }}>
+          <div style={{ fontSize: 24, color: "#ee3135", letterSpacing: 8 }}>
             FOOD · FAMILY · FRIENDS
           </div>
           <div
@@ -72,9 +70,7 @@ export default function OG() {
               fontSize: 96,
               fontWeight: 900,
               lineHeight: 1,
-              backgroundImage: "linear-gradient(90deg,#ffd600,#f58c3d,#ee3135)",
-              backgroundClip: "text",
-              color: "transparent",
+              color: "#ee3135",
               letterSpacing: -2,
             }}
           >

@@ -22,7 +22,7 @@ export function TonightAtStadium() {
   return (
     <section
       aria-labelledby="tonight-heading"
-      className="relative rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent p-5 sm:p-8"
+      className="relative rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-8"
     >
       <div className="flex items-end justify-between gap-4 flex-wrap">
         <div>

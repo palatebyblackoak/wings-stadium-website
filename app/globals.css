@@ -40,39 +40,18 @@ html, body {
 
 /* ---------- Utilities ---------- */
 @layer utilities {
+  /* Brand accent — was a yellow→orange→red gradient, now a single solid red
+     to keep the brand identity flat and on-mark. */
   .text-heat {
-    background: linear-gradient(90deg, var(--yellow) 0%, var(--orange) 45%, var(--red) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--red);
   }
   .ring-heat {
-    box-shadow:
-      0 0 0 1px rgba(255,214,0,0.25),
-      0 10px 30px -10px rgba(238,49,53,0.55);
+    box-shadow: 0 10px 30px -10px rgba(238, 49, 53, 0.55);
   }
-  .grain {
-    position: relative;
-  }
-  .grain::after {
-    content: "";
-    position: absolute; inset: 0;
-    background-image:
-      radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-      radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
-    background-size: 3px 3px, 7px 7px;
-    background-position: 0 0, 1px 2px;
-    pointer-events: none;
-    mix-blend-mode: overlay;
-    opacity: 0.6;
-  }
-  .stadium-bg {
-    background:
-      radial-gradient(60% 80% at 50% 0%, rgba(245,140,61,0.18) 0%, transparent 60%),
-      radial-gradient(40% 50% at 90% 30%, rgba(238,49,53,0.18) 0%, transparent 60%),
-      radial-gradient(60% 60% at 10% 80%, rgba(255,214,0,0.10) 0%, transparent 60%),
-      var(--black);
-  }
+  /* Grain noise + stadium-bg radial wash retired: per brand, no textures
+     and no gradients. Solid backgrounds only. */
+  .grain { position: relative; }
+  .stadium-bg { background: var(--black); }
   .heading-display {
     font-family: var(--font-display);
     letter-spacing: 0.02em;

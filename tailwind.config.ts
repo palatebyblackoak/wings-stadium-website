@@ -21,10 +21,11 @@ const config: Config = {
         label: ["var(--font-label)", "system-ui", "sans-serif"],
         body: ["var(--font-body)", "system-ui", "sans-serif"],
       },
-      backgroundImage: {
-        heat: "linear-gradient(90deg, var(--yellow) 0%, var(--orange) 45%, var(--red) 100%)",
-        "heat-radial":
-          "radial-gradient(60% 60% at 50% 40%, rgba(245,140,61,0.35) 0%, rgba(238,49,53,0.18) 45%, rgba(32,32,32,0) 75%)",
+      backgroundColor: {
+        // Brand "heat" used to be a yellow→orange→red gradient. Per brand
+        // direction, accents are now a single solid red. Keeping the
+        // bg-heat utility name so existing call-sites keep working.
+        heat: "var(--red)",
       },
       keyframes: {
         riseIn: {

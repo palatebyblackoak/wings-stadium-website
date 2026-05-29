@@ -78,7 +78,7 @@ export default function MenuHub() {
         </article>
 
         {/* BAR */}
-        <article className="relative rounded-2xl border border-white/10 bg-gradient-to-b from-red-brand/10 to-transparent overflow-hidden">
+        <article className="relative rounded-2xl border border-red-brand/30 bg-red-brand/5 overflow-hidden">
           <PhotoSlot
             label="Margaritas, drafts, and shots lined up at the bar"
             filePath="/public/photos/menu-bar.jpg"

@@ -31,14 +31,12 @@ export function PhotoSlot({
 
   return (
     <div
-      className={`${aspect} relative w-full rounded-xl overflow-hidden ring-heat grain ${className}`}
+      className={`${aspect} relative w-full rounded-xl overflow-hidden bg-ink ring-heat ${className}`}
       role="img"
       aria-label={label}
     >
-      <div className="absolute inset-0 bg-heat-radial" />
-      <div className="absolute inset-0 bg-gradient-to-br from-ink via-ink to-black" style={{ mixBlendMode: "multiply" }} />
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-        <div className="font-label text-xs sm:text-sm tracking-[0.3em] text-yellow-brand/90">
+        <div className="font-label text-xs sm:text-sm tracking-[0.3em] text-red-brand">
           PHOTO SLOT
         </div>
         <div className="heading-display text-2xl sm:text-3xl text-white mt-2 max-w-md">
@@ -46,7 +44,7 @@ export function PhotoSlot({
         </div>
         {filePath && (
           <div className="font-body text-xs text-white/50 mt-3">
-            Drop in: <code className="text-yellow-brand/90">{filePath}</code>
+            Drop in: <code className="text-red-brand">{filePath}</code>
           </div>
         )}
       </div>
