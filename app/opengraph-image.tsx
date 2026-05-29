@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "The Wings Stadium — Where McAllen Watches the Game";
+export const alt =
+  "The Wings Stadium — Where McAllen Watches the Game. 5000 Pecan Blvd, McAllen, TX. Open daily.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const runtime = "edge";
@@ -56,25 +57,27 @@ export default function OG() {
           </div>
           <div
             style={{
-              fontSize: 96,
+              fontSize: 110,
               fontWeight: 900,
-              lineHeight: 1,
+              lineHeight: 0.9,
               marginTop: 16,
-              letterSpacing: -2,
+              letterSpacing: -3,
+              textTransform: "uppercase",
             }}
           >
-            Where McAllen
+            Tonight at
           </div>
           <div
             style={{
-              fontSize: 96,
+              fontSize: 110,
               fontWeight: 900,
-              lineHeight: 1,
+              lineHeight: 0.9,
               color: "#ee3135",
-              letterSpacing: -2,
+              letterSpacing: -3,
+              textTransform: "uppercase",
             }}
           >
-            watches the game.
+            The Wings Stadium.
           </div>
         </div>
 

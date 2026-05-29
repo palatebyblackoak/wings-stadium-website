@@ -32,7 +32,10 @@ export function restaurantJsonLd() {
     telephone: business.phoneE164,
     priceRange: business.priceRange,
     servesCuisine: ["American", "Bar Food", "Wings"],
-    image: [`${SITE_URL}/logo/logo-white-for-dark.png`],
+    image: [
+      `${SITE_URL}/opengraph-image`,
+      `${SITE_URL}/logo/logo-white-for-dark.png`,
+    ],
     address: {
       "@type": "PostalAddress",
       streetAddress: business.address.street,
@@ -53,7 +56,7 @@ export function restaurantJsonLd() {
       closes: clamp24(h.closes),
     })),
     sameAs: [business.social.facebook, business.social.instagram, business.social.tiktok],
-    hasMenu: `${SITE_URL}/menu`,
+    hasMenu: `${SITE_URL}/menus/food-menu.pdf`,
     acceptsReservations: false,
   };
 }
