@@ -42,9 +42,9 @@ export function Footer() {
         <div>
           <div className="heading-label text-yellow-brand text-xs">Follow</div>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><a className="text-white/80 hover:text-white" href={business.social.facebook} target="_blank" rel="noreferrer">Facebook · @THEWINGSSPORTSBAR</a></li>
-            <li><a className="text-white/80 hover:text-white" href={business.social.instagram} target="_blank" rel="noreferrer">Instagram · @THEWINGSSTADIUM</a></li>
-            <li><a className="text-white/80 hover:text-white" href={business.social.tiktok} target="_blank" rel="noreferrer">TikTok · @THEWINGSSTADIUM</a></li>
+            <li><a className="text-white/80 hover:text-white" href={business.social.facebook} target="_blank" rel="noreferrer">Facebook · {business.socialHandles.facebook}</a></li>
+            <li><a className="text-white/80 hover:text-white" href={business.social.instagram} target="_blank" rel="noreferrer">Instagram · {business.socialHandles.instagram}</a></li>
+            <li><a className="text-white/80 hover:text-white" href={business.social.tiktok} target="_blank" rel="noreferrer">TikTok · {business.socialHandles.tiktok}</a></li>
           </ul>
           <div className="mt-6 flex gap-4 text-xs">
             <Link href="/menu" className="text-white/60 hover:text-white">Menu</Link>

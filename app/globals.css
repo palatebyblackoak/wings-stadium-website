@@ -16,6 +16,7 @@
   --font-script: "Caveat", "Permanent Marker", cursive;                  /* Subtitle — handwritten */
   --font-label: "Bowlby One", "Barlow Condensed", system-ui, sans-serif; /* Section header — chunky condensed */
   --font-body: "Open Sans", system-ui, sans-serif;                       /* Subheading / body */
+  --font-stack: "Anton", "Bebas Neue", "Oswald", system-ui, sans-serif;  /* Stacked all-caps poster headlines */
 }
 
 /* TODO: when brand brush/marker font files arrive, drop them here and override --font-display.
@@ -87,6 +88,15 @@ html, body {
     font-family: var(--font-script);
     font-weight: 600;
     letter-spacing: 0;
+  }
+  /* Stadium-banner stacked all-caps. Tight tracking, line-height 0.85,
+     massive responsive size. Use for the loudest hero / section headlines. */
+  .heading-stack {
+    font-family: var(--font-stack);
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+    line-height: 0.85;
+    font-weight: 400;
   }
 }
 

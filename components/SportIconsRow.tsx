@@ -1,6 +1,7 @@
 /* Renders the brand's sport-ball stickers as a horizontal row.
-   Source PNGs are dark brown on transparent — the CSS filter inverts them
-   to white so they sit cleanly on the dark stadium background. */
+   Source PNGs are the brand's brown-on-cream stickers, designed to read
+   on a light surface — render them on a cream pill so they show in their
+   native form (no inversion, no recolor). */
 
 const SPORTS = [
   { src: "/marketing/sport-football.png", label: "Football" },
@@ -18,7 +19,7 @@ export function SportIconsRow({
 }) {
   return (
     <ul
-      className={`flex items-center gap-5 sm:gap-8 ${className}`}
+      className={`inline-flex items-center gap-5 sm:gap-7 bg-paper rounded-full px-5 sm:px-7 py-2.5 sm:py-3 shadow-[0_10px_30px_-10px_rgba(238,49,53,0.45)] ring-1 ring-black/5 ${className}`}
       aria-label="Sports we broadcast"
     >
       {SPORTS.map((s) => (
@@ -29,13 +30,8 @@ export function SportIconsRow({
             alt={s.label}
             width={size}
             height={size}
-            style={{
-              width: size,
-              height: size,
-              filter:
-                "brightness(0) invert(1) drop-shadow(0 6px 14px rgba(245,140,61,0.35))",
-            }}
-            className="opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-transform duration-200"
+            style={{ width: size, height: size }}
+            className="group-hover:scale-110 transition-transform duration-200"
           />
         </li>
       ))}

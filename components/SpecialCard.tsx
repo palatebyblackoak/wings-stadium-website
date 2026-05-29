@@ -40,8 +40,7 @@ export function SpecialCard({
           src={gesture}
           alt=""
           aria-hidden
-          className="pointer-events-none absolute -right-3 -bottom-3 w-24 sm:w-28 opacity-25 group-hover:opacity-40 transition-opacity duration-200 rotate-[14deg]"
-          style={{ filter: "brightness(0) invert(1)" }}
+          className="pointer-events-none absolute -right-4 -bottom-4 w-28 sm:w-32 rotate-[14deg]"
         />
       )}
 

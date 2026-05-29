@@ -20,9 +20,14 @@ export const business = {
   email: "",
   google: { rating: 4.1, reviewCount: 87, perPerson: "$20–30" },
   social: {
-    facebook: "https://www.facebook.com/THEWINGSSPORTSBAR",
-    instagram: "https://www.instagram.com/THEWINGSSTADIUM",
-    tiktok: "https://www.tiktok.com/@THEWINGSSTADIUM",
+    facebook: "https://www.facebook.com/profile.php?id=61565983813891",
+    instagram: "https://www.instagram.com/thewingsstadium_mcallen/",
+    tiktok: "https://www.tiktok.com/@thewingsstadium",
+  },
+  socialHandles: {
+    facebook: "The Wings Stadium",
+    instagram: "@thewingsstadium_mcallen",
+    tiktok: "@thewingsstadium",
   },
   reviewUrl:
     "https://www.google.com/search?q=The+Wings+Stadium+McAllen+TX&hl=en#lrd=0x0:0x0,3",

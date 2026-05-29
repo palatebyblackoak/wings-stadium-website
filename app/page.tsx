@@ -5,63 +5,66 @@ import { CatchEveryGame } from "@/components/CatchEveryGame";
 import { TonightAtStadium } from "@/components/TonightAtStadium";
 import { SpecialsGrid } from "@/components/SpecialsGrid";
 import { LocationStrip } from "@/components/LocationStrip";
-import { Logo } from "@/components/Logo";
-import { PhotoSlot } from "@/components/PhotoSlot";
 import { SectionTag } from "@/components/SectionTag";
-import { ScribbleBg } from "@/components/ScribbleBg";
 
 export default function HomePage() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative stadium-bg grain overflow-hidden">
-        <ScribbleBg />
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-20 sm:pt-20 sm:pb-28 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative">
-          <div className="lg:col-span-7 animate-riseIn">
-            <div className="mb-8">
-              <Logo variant="dark" height={120} className="max-w-[420px] sm:max-w-[520px]" />
-            </div>
-            <h1 className="heading-display text-white text-[44px] sm:text-[72px] lg:text-[96px] mt-2">
-              Where McAllen
-              <br />
-              <span className="text-heat">watches the game.</span>
-            </h1>
-            <p className="mt-5 font-body text-white/85 text-base sm:text-lg max-w-xl leading-relaxed">
-              Loud. Hungry. All in. Wings, drafts, and every game on screen —
-              the stadium energy without the ticket price.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <CTAButton href="/menu" size="lg" variant="heat">
-                See the Menu
-              </CTAButton>
-              <CTAButton href="/specials" size="lg" variant="outline">
-                Tonight's Specials
-              </CTAButton>
-              <CTAButton href="/visit" size="lg" variant="ghost">
-                Visit →
-              </CTAButton>
-            </div>
-            <div className="mt-7">
-              <GoogleBadge />
-            </div>
-          </div>
+      {/* HERO — full-bleed venue photo, stacked all-caps headline */}
+      <section className="relative min-h-[88vh] sm:min-h-[92vh] overflow-hidden flex items-end">
+        {/* Background photo */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/photos/storefront.jpg"
+          alt="The Wings Stadium — 5000 Pecan Blvd, McAllen"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        {/* Legibility gradient — dark at bottom, lighter at top */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.85) 100%)",
+          }}
+          aria-hidden
+        />
 
-          <div className="lg:col-span-5 relative">
-            {/* Football sticker tucked behind the photo */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/marketing/sport-football.png"
-              alt=""
-              aria-hidden
-              className="absolute -top-8 -right-4 w-24 sm:w-32 rotate-[18deg] z-10 drop-shadow-[0_8px_20px_rgba(245,140,61,0.5)]"
-              style={{ filter: "brightness(0) invert(1)" }}
-            />
-            <PhotoSlot
-              src="/photos/hero.jpg"
-              label="Hero shot — wings, drafts, and a game on the wall"
-              filePath="/public/photos/hero.jpg"
-              aspect="aspect-[3/2]"
-            />
+        {/* Foreground */}
+        <div className="relative max-w-6xl mx-auto w-full px-4 sm:px-6 pb-14 sm:pb-20 animate-riseIn">
+          <h1
+            className="heading-stack text-white text-[clamp(56px,13vw,180px)]"
+            aria-label="Where McAllen watches the game"
+          >
+            <span className="block">Where</span>
+            <span className="block">McAllen</span>
+            <span className="block text-heat">Watches</span>
+            <span className="block">the Game.</span>
+          </h1>
+
+          {/* Specifics ticker */}
+          <ul className="mt-6 sm:mt-8 flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-2 font-label text-[11px] sm:text-sm text-white/85 tracking-[0.18em]">
+            <li>WALL-TO-WALL SCREENS</li>
+            <li aria-hidden className="text-yellow-brand">•</li>
+            <li>EVERY GAME, EVERY NIGHT</li>
+            <li aria-hidden className="text-yellow-brand">•</li>
+            <li>WINGS + COLD DRAFTS</li>
+            <li aria-hidden className="text-yellow-brand">•</li>
+            <li>11AM&nbsp;–&nbsp;LATE</li>
+          </ul>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <CTAButton href="/menu" size="lg" variant="heat">
+              See the Menu
+            </CTAButton>
+            <CTAButton href="/specials" size="lg" variant="outline">
+              Tonight's Specials
+            </CTAButton>
+            <CTAButton href="/visit" size="lg" variant="ghost">
+              Visit →
+            </CTAButton>
+          </div>
+          <div className="mt-6">
+            <GoogleBadge />
           </div>
         </div>
       </section>

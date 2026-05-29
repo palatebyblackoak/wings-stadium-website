@@ -111,17 +111,17 @@ export default function VisitPage() {
             <ul className="mt-4 space-y-2 text-sm">
               <li>
                 <a className="text-white/85 hover:text-white" href={business.social.facebook} target="_blank" rel="noreferrer">
-                  Facebook · @THEWINGSSPORTSBAR
+                  Facebook · {business.socialHandles.facebook}
                 </a>
               </li>
               <li>
                 <a className="text-white/85 hover:text-white" href={business.social.instagram} target="_blank" rel="noreferrer">
-                  Instagram · @THEWINGSSTADIUM
+                  Instagram · {business.socialHandles.instagram}
                 </a>
               </li>
               <li>
                 <a className="text-white/85 hover:text-white" href={business.social.tiktok} target="_blank" rel="noreferrer">
-                  TikTok · @THEWINGSSTADIUM
+                  TikTok · {business.socialHandles.tiktok}
                 </a>
               </li>
             </ul>
