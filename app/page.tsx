@@ -5,6 +5,7 @@ import { TonightAtStadium } from "@/components/TonightAtStadium";
 import { SpecialsGrid } from "@/components/SpecialsGrid";
 import { LocationStrip } from "@/components/LocationStrip";
 import { SectionTag } from "@/components/SectionTag";
+import { WingsClubSignup } from "@/components/WingsClubSignup";
 
 export default function HomePage() {
   return (
@@ -82,6 +83,9 @@ export default function HomePage() {
           </div>
           <SpecialsGrid />
         </section>
+
+        {/* WINGS CLUB SIGNUP */}
+        <WingsClubSignup />
 
         {/* LOCATION STRIP */}
         <LocationStrip />
