@@ -2,10 +2,10 @@ import type { DayLineup } from "@/data/specials";
 
 /* Decorate the high-energy DJ nights with a hand-gesture sticker, echoing the
    printed menu's use of brush illustrations as section accents. */
-function gestureFor(day: DayLineup): string | null {
-  if (day.key === "wed") return "/marketing/gesture-fist.png";
-  if (day.key === "thu") return "/marketing/gesture-peace.png";
-  if (day.key === "fri") return "/marketing/gesture-rock.png";
+function gestureFor(day: DayLineup): { src: string; alt: string } | null {
+  if (day.key === "wed") return { src: "/marketing/gesture-fist.png", alt: "Fist gesture" };
+  if (day.key === "thu") return { src: "/marketing/gesture-peace.png", alt: "Peace gesture" };
+  if (day.key === "fri") return { src: "/marketing/gesture-rock.png", alt: "Rock-on hand gesture" };
   return null;
 }
 
@@ -37,9 +37,8 @@ export function SpecialCard({
       {gesture && (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={gesture}
-          alt=""
-          aria-hidden
+          src={gesture.src}
+          alt={gesture.alt}
           className="pointer-events-none absolute -right-4 -bottom-4 w-28 sm:w-32 rotate-[14deg]"
         />
       )}
@@ -66,17 +65,17 @@ export function SpecialCard({
       {day.placeholder ? (
         <p className="relative mt-4 font-body text-white/70 italic">{day.placeholder}</p>
       ) : (
-        <ul className="relative mt-4 space-y-1.5">
+        <ul className="relative mt-4 space-y-2">
           {day.specials.map((s, i) => (
             <li
               key={i}
-              className={`flex items-baseline gap-2 ${
+              className={`flex flex-wrap items-baseline gap-x-3 gap-y-1 ${
                 s.emphasis ? "text-white" : "text-white/85"
               }`}
             >
               {s.price && (
                 <span
-                  className={`font-display text-base sm:text-lg px-2.5 py-0.5 rounded ${
+                  className={`shrink-0 font-display text-base sm:text-lg px-2.5 py-0.5 rounded ${
                     s.emphasis
                       ? "bg-heat text-ink"
                       : "border border-white/15 text-yellow-brand"
