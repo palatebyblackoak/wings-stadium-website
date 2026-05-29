@@ -4,12 +4,12 @@ export const foodTeaser = {
   categories: [
     {
       name: "Wings",
-      note: "Boneless + traditional. The primary driver.",
+      note: "Boneless and traditional. Tossed loud, served hot.",
       hero: true,
     },
     { name: "Burgers", note: "Stacked, sauced, served loud." },
     { name: "Hot Dogs", note: "Loaded and game-ready." },
-    { name: "Pizza", note: "Sharable, fast, fresh out the oven." },
-    { name: "Bar Snacks", note: "Built for beers + screens." },
+    { name: "Pizza", note: "Shareable, fast, fresh out the oven." },
+    { name: "Bar Snacks", note: "Built for beers and screens." },
   ],
 };

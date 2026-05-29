@@ -18,7 +18,7 @@ export const business = {
   phone: "(956) 322-5978",
   phoneE164: "+19563225978",
   email: "",
-  google: { rating: 4.1, reviewCount: 87, perPerson: "$20–30" },
+  priceRange: "$$",
   social: {
     facebook: "https://www.facebook.com/profile.php?id=61565983813891",
     instagram: "https://www.instagram.com/thewingsstadium_mcallen/",
@@ -30,7 +30,7 @@ export const business = {
     tiktok: "@thewingsstadium",
   },
   reviewUrl:
-    "https://www.google.com/search?q=The+Wings+Stadium+McAllen+TX&hl=en#lrd=0x0:0x0,3",
+    "https://www.google.com/maps/search/?api=1&query=The+Wings+Stadium+5000+Pecan+Blvd+McAllen+TX+78501",
   directionsUrl:
     "https://www.google.com/maps/dir/?api=1&destination=The+Wings+Stadium+5000+Pecan+Blvd+McAllen+TX+78501",
   mapEmbedUrl:

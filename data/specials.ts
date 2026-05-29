@@ -61,7 +61,7 @@ export const weekly: DayLineup[] = [
     key: "tue",
     label: "Tuesday",
     shortLabel: "TUE",
-    subtitle: "Select Bottled Beers — $2.50",
+    subtitle: "Select Bottled Beers",
     specials: [
       {
         text: "Bud Light · Budweiser · Tecate Light · Miller Lite · Twisted Tea · Hoop Tea",
@@ -115,17 +115,19 @@ export const weekly: DayLineup[] = [
     key: "sat",
     label: "Saturday",
     shortLabel: "SAT",
-    theme: "Game Day",
+    theme: "College Saturdays",
     specials: [],
-    placeholder: "Every game on every screen. Lineup drops soon.",
+    placeholder:
+      "Every game on every screen. Sound on for the marquee. Wings and cold drafts. Come early, stay late.",
   },
   {
     key: "sun",
     label: "Sunday",
     shortLabel: "SUN",
-    theme: "Game Day",
+    theme: "NFL Sundays",
     specials: [],
-    placeholder: "Every game on every screen. Lineup drops soon.",
+    placeholder:
+      "Every game, every screen, all day. The stadium energy without the ticket price.",
   },
 ];
 

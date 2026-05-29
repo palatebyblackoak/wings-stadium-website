@@ -30,7 +30,7 @@ export function restaurantJsonLd() {
     description: business.description,
     url: SITE_URL,
     telephone: business.phoneE164,
-    priceRange: business.google.perPerson,
+    priceRange: business.priceRange,
     servesCuisine: ["American", "Bar Food", "Wings"],
     image: [`${SITE_URL}/logo/logo-white-for-dark.png`],
     address: {
@@ -53,11 +53,6 @@ export function restaurantJsonLd() {
       closes: clamp24(h.closes),
     })),
     sameAs: [business.social.facebook, business.social.instagram, business.social.tiktok],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: business.google.rating,
-      reviewCount: business.google.reviewCount,
-    },
     hasMenu: `${SITE_URL}/menu`,
     acceptsReservations: false,
   };
