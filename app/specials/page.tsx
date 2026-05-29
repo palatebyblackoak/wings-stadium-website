@@ -62,17 +62,23 @@ export default function SpecialsPage() {
       </section>
 
       {/* LUNCH */}
-      <section className="mb-12 rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-7 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-        <div>
+      <section className="mb-12 rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-0 sm:gap-6 items-center">
+        <div className="p-5 sm:p-7 flex flex-col justify-center">
           <SectionTag size="sm" color="red" tilt={-1}>{lunch.days}</SectionTag>
           <h2 className="heading-display text-3xl sm:text-4xl text-white mt-5">
             {lunch.headline}
           </h2>
           <p className="font-body text-white/75 mt-1">{lunch.body}</p>
+          <span className="mt-4 self-start font-display text-base text-ink bg-heat px-4 py-1.5 rounded-full">
+            MON–FRI · 11AM–3PM
+          </span>
         </div>
-        <span className="self-start sm:self-auto font-display text-base text-ink bg-heat px-4 py-1.5 rounded-full">
-          MON–FRI
-        </span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/photos/specials-mix-match.jpg"
+          alt="Mix & Match Lunch — burger, chicken quesadilla, cobb salad, fries with sides for $8.49–$9.99"
+          className="w-full sm:w-56 lg:w-64 aspect-[4/5] object-contain self-stretch sm:self-center"
+        />
       </section>
 
       {/* WEEKLY GRID */}

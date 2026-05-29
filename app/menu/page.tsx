@@ -30,9 +30,10 @@ export default function MenuHub() {
         {/* FOOD */}
         <article className="relative rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
           <PhotoSlot
+            src="/photos/menu-food.jpg"
             label="Plate of wings — boneless + traditional"
             filePath="/public/photos/menu-food.jpg"
-            aspect="aspect-[16/9]"
+            aspect="aspect-[4/5]"
           />
           <div className="p-6 sm:p-8 relative">
             <SectionTag size="sm" tilt={-2}>Food</SectionTag>
@@ -81,7 +82,7 @@ export default function MenuHub() {
           <PhotoSlot
             label="Margaritas, drafts, and shots lined up at the bar"
             filePath="/public/photos/menu-bar.jpg"
-            aspect="aspect-[16/9]"
+            aspect="aspect-[4/5]"
           />
           <div className="p-6 sm:p-8 relative">
             <SectionTag size="sm" color="red" tilt={1.5}>Bar</SectionTag>

@@ -24,6 +24,16 @@ export default function VisitPage() {
         </p>
       </header>
 
+      {/* STOREFRONT */}
+      <div className="mb-10 rounded-2xl overflow-hidden ring-heat">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/photos/storefront.jpg"
+          alt="The Wings Stadium storefront — 5000 Pecan Blvd, McAllen"
+          className="w-full aspect-[4/3] sm:aspect-[16/9] object-cover object-center"
+        />
+      </div>
+
       <section className="grid grid-cols-1 lg:grid-cols-5 gap-6">
         {/* MAP */}
         <div className="lg:col-span-3 rounded-2xl border border-white/10 overflow-hidden bg-black">

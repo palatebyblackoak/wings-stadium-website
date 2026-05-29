@@ -26,9 +26,10 @@ export function CatchEveryGame() {
         </ul>
       </div>
       <PhotoSlot
+        src="/photos/catch-every-game.jpg"
         label="Crowd watching the game — multi-screen wall"
         filePath="/public/photos/catch-every-game.jpg"
-        aspect="aspect-[5/4]"
+        aspect="aspect-[3/4]"
       />
     </section>
   );

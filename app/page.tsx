@@ -57,9 +57,10 @@ export default function HomePage() {
               style={{ filter: "brightness(0) invert(1)" }}
             />
             <PhotoSlot
+              src="/photos/hero.jpg"
               label="Hero shot — wings, drafts, and a game on the wall"
               filePath="/public/photos/hero.jpg"
-              aspect="aspect-[4/5]"
+              aspect="aspect-[3/2]"
             />
           </div>
         </div>
