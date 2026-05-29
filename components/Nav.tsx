@@ -1,30 +1,27 @@
-import Link from "next/link";
-import { Logo } from "./Logo";
-import { business } from "@/data/business";
+"use client";
 
-const LINKS = [
-  { href: "/#tonight", label: "Tonight" },
-  { href: "/#specials", label: "Specials" },
-  { href: "/#menu", label: "Menu" },
-  { href: "/#visit", label: "Visit" },
+import Link from "next/link";
+import { useState } from "react";
+import { Logo } from "./Logo";
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/menu", label: "Menu" },
+  { href: "/specials", label: "Specials" },
+  { href: "/visit", label: "Visit" },
 ];
 
 export function Nav() {
+  const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-ink/80 bg-ink/95 border-b border-white/10">
+    <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-ink/75 bg-ink/95 border-b border-white/10">
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 h-16">
-        <Link
-          href="/#top"
-          className="flex items-center"
-          aria-label={`${business.name} — home`}
-        >
+        <Link href="/" className="flex items-center" aria-label="The Wings Stadium — home">
           <Logo variant="dark" height={36} />
         </Link>
 
-        {/* Desktop — anchor links, no CTA button (decision lives in the
-            floating pill bottom-right). */}
-        <div className="hidden md:flex items-center gap-7">
-          {LINKS.map((l) => (
+        <div className="hidden md:flex items-center gap-6">
+          {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
@@ -35,16 +32,42 @@ export function Nav() {
           ))}
         </div>
 
-        {/* Mobile — single high-intent CTA only. No hamburger. */}
-        <a
-          href={business.directionsUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="md:hidden inline-flex items-center font-label uppercase tracking-wider rounded-md bg-red-brand text-white px-4 py-2 text-sm hover:brightness-110 transition"
+        <button
+          className="md:hidden p-2 text-white"
+          onClick={() => setOpen((v) => !v)}
+          aria-label="Toggle menu"
+          aria-expanded={open}
         >
-          Get Directions
-        </a>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+            {open ? (
+              <path d="M6 6l12 12M6 18L18 6" strokeLinecap="round" />
+            ) : (
+              <>
+                <path d="M4 7h16" strokeLinecap="round" />
+                <path d="M4 12h16" strokeLinecap="round" />
+                <path d="M4 17h16" strokeLinecap="round" />
+              </>
+            )}
+          </svg>
+        </button>
       </nav>
+
+      {open && (
+        <div className="md:hidden border-t border-white/10 bg-ink">
+          <div className="px-4 py-4 flex flex-col gap-2">
+            {links.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="font-label text-base py-2 text-white/90"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </header>
   );
 }
