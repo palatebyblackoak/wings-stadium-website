@@ -1,4 +1,5 @@
 import { Logo } from "./Logo";
+import { SocialIcons } from "./SocialIcons";
 import { business, hours } from "@/data/business";
 
 export function Footer() {
@@ -40,11 +41,7 @@ export function Footer() {
 
         <div>
           <div className="heading-label text-yellow-brand text-xs">Follow</div>
-          <ul className="mt-3 space-y-2 text-sm">
-            <li><a className="text-white/80 hover:text-white" href={business.social.facebook} target="_blank" rel="noreferrer">Facebook · {business.socialHandles.facebook}</a></li>
-            <li><a className="text-white/80 hover:text-white" href={business.social.instagram} target="_blank" rel="noreferrer">Instagram · {business.socialHandles.instagram}</a></li>
-            <li><a className="text-white/80 hover:text-white" href={business.social.tiktok} target="_blank" rel="noreferrer">TikTok · {business.socialHandles.tiktok}</a></li>
-          </ul>
+          <SocialIcons className="mt-3" />
         </div>
       </div>
       <div className="border-t border-white/10">
