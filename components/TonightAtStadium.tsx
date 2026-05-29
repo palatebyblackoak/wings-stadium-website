@@ -8,8 +8,9 @@ import { SpecialCard } from "./SpecialCard";
 import { SectionTag } from "./SectionTag";
 
 export function TonightAtStadium() {
-  // Render a stable shell on the server, then hydrate to today's lineup.
-  // Avoids SSR/CSR day-mismatch from server timezone vs. user's local day.
+  // Server-render a neutral shell, then on mount swap in today's lineup from
+  // the user's local timezone. Avoids SSR/CSR day-mismatch from the server
+  // resolving Date() in UTC while the user is in CT.
   const [day, setDay] = useState<DayKey | null>(null);
 
   useEffect(() => {
@@ -30,7 +31,7 @@ export function TonightAtStadium() {
             id="tonight-heading"
             className="heading-display text-4xl sm:text-6xl text-white mt-4"
           >
-            {lineup ? lineup.theme ?? lineup.label : "What's on tonight"}
+            {lineup ? lineup.theme ?? lineup.label : "Tonight at the Stadium"}
           </h2>
         </div>
         {lineup?.liveDj && (
@@ -40,12 +41,16 @@ export function TonightAtStadium() {
         )}
       </div>
 
-      <div className="mt-5">
+      <div className="mt-5" aria-live="polite">
         {lineup ? (
           <SpecialCard day={lineup} highlighted />
         ) : (
-          <div className="rounded-xl border border-white/10 bg-white/[0.03] p-6 text-white/60">
-            Loading tonight's lineup…
+          <div className="rounded-xl border border-white/10 bg-white/[0.03] p-6 font-body text-white/70 text-sm sm:text-base">
+            Every night hits different. Tap{" "}
+            <a href="/specials" className="text-yellow-brand hover:text-white underline underline-offset-4">
+              Specials
+            </a>{" "}
+            to see the full week, or check back tonight for the live lineup.
           </div>
         )}
       </div>
