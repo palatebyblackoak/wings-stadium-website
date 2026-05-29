@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Logo } from "./Logo";
-import { CTAButton } from "./CTAButton";
 
 const links = [
   { href: "/", label: "Home" },
@@ -31,9 +30,6 @@ export function Nav() {
               {l.label}
             </Link>
           ))}
-          <CTAButton href="/visit" size="md">
-            Visit
-          </CTAButton>
         </div>
 
         <button
@@ -69,9 +65,6 @@ export function Nav() {
                 {l.label}
               </Link>
             ))}
-            <CTAButton href="/visit" size="md" className="mt-2">
-              Visit
-            </CTAButton>
           </div>
         </div>
       )}

@@ -1,5 +1,4 @@
 import { CTAButton } from "@/components/CTAButton";
-import { GoogleBadge } from "@/components/GoogleBadge";
 import { HappyHourBanner } from "@/components/HappyHourBanner";
 import { CatchEveryGame } from "@/components/CatchEveryGame";
 import { TonightAtStadium } from "@/components/TonightAtStadium";
@@ -32,25 +31,25 @@ export default function HomePage() {
         {/* Foreground */}
         <div className="relative max-w-6xl mx-auto w-full px-4 sm:px-6 pb-14 sm:pb-20 animate-riseIn">
           <h1
-            className="heading-stack text-white text-[clamp(56px,13vw,180px)]"
+            className="heading-stack flex flex-col text-white text-[clamp(56px,13vw,180px)]"
             aria-label="Where McAllen watches the game"
           >
-            <span className="block">Where</span>
-            <span className="block">McAllen</span>
-            <span className="block text-heat">Watches</span>
-            <span className="block">the Game.</span>
+            <span style={{ display: "block" }}>Where</span>
+            <span style={{ display: "block" }}>McAllen</span>
+            <span style={{ display: "block" }} className="text-heat">Watches</span>
+            <span style={{ display: "block" }}>the Game.</span>
           </h1>
 
-          {/* Specifics ticker */}
-          <ul className="mt-6 sm:mt-8 flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-2 font-label text-[11px] sm:text-sm text-white/85 tracking-[0.18em]">
-            <li>WALL-TO-WALL SCREENS</li>
-            <li aria-hidden className="text-yellow-brand">•</li>
-            <li>EVERY GAME, EVERY NIGHT</li>
-            <li aria-hidden className="text-yellow-brand">•</li>
-            <li>WINGS + COLD DRAFTS</li>
-            <li aria-hidden className="text-yellow-brand">•</li>
-            <li>11AM&nbsp;–&nbsp;LATE</li>
-          </ul>
+          {/* Specifics ticker — single inline strip with dot separators */}
+          <p className="mt-6 sm:mt-8 font-label text-[11px] sm:text-sm text-white/85 tracking-[0.18em] leading-relaxed">
+            WALL-TO-WALL SCREENS
+            <span aria-hidden className="text-yellow-brand mx-2 sm:mx-3">•</span>
+            EVERY GAME, EVERY NIGHT
+            <span aria-hidden className="text-yellow-brand mx-2 sm:mx-3">•</span>
+            WINGS + COLD DRAFTS
+            <span aria-hidden className="text-yellow-brand mx-2 sm:mx-3">•</span>
+            11AM&nbsp;–&nbsp;LATE
+          </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <CTAButton href="/menu" size="lg" variant="heat">
@@ -59,12 +58,6 @@ export default function HomePage() {
             <CTAButton href="/specials" size="lg" variant="outline">
               Tonight's Specials
             </CTAButton>
-            <CTAButton href="/visit" size="lg" variant="ghost">
-              Visit →
-            </CTAButton>
-          </div>
-          <div className="mt-6">
-            <GoogleBadge />
           </div>
         </div>
       </section>

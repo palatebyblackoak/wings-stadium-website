@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Logo } from "./Logo";
 import { business, hours } from "@/data/business";
 
@@ -46,11 +45,6 @@ export function Footer() {
             <li><a className="text-white/80 hover:text-white" href={business.social.instagram} target="_blank" rel="noreferrer">Instagram · {business.socialHandles.instagram}</a></li>
             <li><a className="text-white/80 hover:text-white" href={business.social.tiktok} target="_blank" rel="noreferrer">TikTok · {business.socialHandles.tiktok}</a></li>
           </ul>
-          <div className="mt-6 flex gap-4 text-xs">
-            <Link href="/menu" className="text-white/60 hover:text-white">Menu</Link>
-            <Link href="/specials" className="text-white/60 hover:text-white">Specials</Link>
-            <Link href="/visit" className="text-white/60 hover:text-white">Visit</Link>
-          </div>
         </div>
       </div>
       <div className="border-t border-white/10">

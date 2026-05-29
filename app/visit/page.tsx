@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { business } from "@/data/business";
 import { HoursTable } from "@/components/HoursTable";
-import { GoogleBadge } from "@/components/GoogleBadge";
 import { SectionTag } from "@/components/SectionTag";
 
 export const metadata: Metadata = {
@@ -94,7 +93,6 @@ export default function VisitPage() {
               Loved your visit? It takes 20 seconds and it actually helps.
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-3">
-              <GoogleBadge />
               <a
                 href={business.reviewUrl}
                 target="_blank"
