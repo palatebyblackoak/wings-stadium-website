@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <>
       {/* HERO — full-bleed venue photo, stacked all-caps headline */}
-      <section className="relative min-h-[55vh] sm:min-h-[70vh] md:min-h-[80vh] overflow-hidden flex items-end">
+      <section className="relative min-h-[55vh] sm:min-h-[70vh] md:min-h-[80vh] overflow-hidden flex items-center justify-center">
         {/* Background photo */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -23,9 +23,9 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black/55" aria-hidden />
 
         {/* Foreground */}
-        <div className="relative max-w-6xl mx-auto w-full px-4 sm:px-6 pb-12 sm:pb-20 animate-riseIn">
+        <div className="relative max-w-6xl mx-auto w-full px-4 sm:px-6 py-10 sm:py-14 text-center animate-riseIn">
           <h1
-            className="heading-stack flex flex-col text-white text-[clamp(56px,13vw,180px)]"
+            className="heading-stack flex flex-col items-center text-white text-[clamp(56px,13vw,180px)] leading-[1.05]"
             aria-label="An experience like no other in McAllen"
           >
             <span style={{ display: "block" }}>An</span>
@@ -36,7 +36,7 @@ export default function HomePage() {
           </h1>
 
           {/* Specifics ticker — single inline strip with dot separators */}
-          <p className="mt-5 sm:mt-8 font-label text-[11px] sm:text-sm text-white/85 tracking-[0.18em] leading-relaxed">
+          <p className="mt-5 sm:mt-7 font-label text-[11px] sm:text-sm text-white/85 tracking-[0.18em] leading-relaxed">
             WALL-TO-WALL SCREENS
             <span aria-hidden className="text-yellow-brand mx-2 sm:mx-3">•</span>
             EVERY GAME, EVERY NIGHT
@@ -46,7 +46,7 @@ export default function HomePage() {
             11AM&nbsp;–&nbsp;LATE
           </p>
 
-          <div className="mt-6 sm:mt-8 flex flex-wrap gap-3">
+          <div className="mt-6 sm:mt-7 flex flex-wrap justify-center gap-3">
             <CTAButton href="/menu" size="lg" variant="heat">
               See the Menu
             </CTAButton>
