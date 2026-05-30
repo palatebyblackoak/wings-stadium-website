@@ -42,7 +42,7 @@ export function SpecialCard({
           aria-hidden
           loading="lazy"
           decoding="async"
-          className="pointer-events-none absolute -right-4 -bottom-4 w-28 sm:w-32 rotate-[14deg]"
+          className="pointer-events-none absolute -right-5 -bottom-5 w-24 sm:w-28 rotate-[14deg] opacity-40"
         />
       )}
 
