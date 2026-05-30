@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { business } from "@/data/business";
 import { HoursTable } from "@/components/HoursTable";
 import { SectionTag } from "@/components/SectionTag";
+import { PageHeader } from "@/components/PageHeader";
+import { SectionBox } from "@/components/SectionBox";
 
 export const metadata: Metadata = {
   title: "Visit — 5000 Pecan Blvd, McAllen, TX",
@@ -13,15 +15,11 @@ export const metadata: Metadata = {
 export default function VisitPage() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-16">
-      <header className="mb-10">
-        <SectionTag size="md" tilt={-2}>Find Us</SectionTag>
-        <h1 className="heading-display text-5xl sm:text-7xl text-white mt-6">
-          Visit the <span className="text-heat">Stadium</span>
-        </h1>
-        <p className="font-body text-white/80 max-w-2xl mt-4 text-base sm:text-lg">
-          5000 Pecan Blvd, McAllen. Open late every night.
-        </p>
-      </header>
+      <PageHeader
+        tag="Find Us"
+        title={<>Visit the <span className="text-heat">Stadium</span></>}
+        description="5000 Pecan Blvd, McAllen. Open late every night."
+      />
 
       {/* STOREFRONT */}
       <div className="mb-10 rounded-2xl overflow-hidden ring-heat">
@@ -29,11 +27,12 @@ export default function VisitPage() {
         <img
           src="/photos/storefront.jpg"
           alt="The Wings Stadium storefront — 5000 Pecan Blvd, McAllen"
+          fetchPriority="high"
           className="w-full aspect-[4/3] sm:aspect-[16/9] object-cover object-center"
         />
       </div>
 
-      <section className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+      <section className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6">
         {/* MAP */}
         <div className="lg:col-span-3 rounded-2xl border border-white/10 overflow-hidden bg-black">
           <iframe
@@ -50,7 +49,7 @@ export default function VisitPage() {
 
         {/* DETAILS */}
         <aside className="lg:col-span-2 space-y-5">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+          <SectionBox className="p-6">
             <SectionTag size="sm" tilt={-1.5}>Address</SectionTag>
             <address className="not-italic mt-4 heading-display text-2xl text-white">
               {business.address.street}<br />
@@ -78,16 +77,16 @@ export default function VisitPage() {
             >
               {business.phone}
             </a>
-          </div>
+          </SectionBox>
 
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+          <SectionBox className="p-6">
             <SectionTag size="sm" color="red" tilt={1.5}>Hours</SectionTag>
             <div className="mt-4">
               <HoursTable />
             </div>
-          </div>
+          </SectionBox>
 
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+          <SectionBox className="p-6">
             <SectionTag size="sm" tilt={-1.5}>Reviews</SectionTag>
             <p className="font-body text-white/80 mt-4 text-sm">
               Loved your visit? It takes 20 seconds and it actually helps.
@@ -102,9 +101,9 @@ export default function VisitPage() {
                 Leave a Review →
               </a>
             </div>
-          </div>
+          </SectionBox>
 
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+          <SectionBox className="p-6">
             <SectionTag size="sm" tilt={1.5}>Follow</SectionTag>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
@@ -123,7 +122,7 @@ export default function VisitPage() {
                 </a>
               </li>
             </ul>
-          </div>
+          </SectionBox>
         </aside>
       </section>
 

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CTAButton } from "@/components/CTAButton";
 import { PhotoSlot } from "@/components/PhotoSlot";
 import { SectionTag } from "@/components/SectionTag";
+import { PageHeader } from "@/components/PageHeader";
 import { foodTeaser } from "@/data/foodTeaser";
 
 export const metadata: Metadata = {
@@ -15,18 +16,14 @@ export const metadata: Metadata = {
 export default function MenuHub() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-16">
-      <header className="mb-10">
-        <SectionTag size="md" tilt={-2}>The Menu</SectionTag>
-        <h1 className="heading-display text-5xl sm:text-7xl text-white mt-6">
-          Pick Your <span className="text-heat">Side</span>
-        </h1>
-        <p className="font-body text-white/80 max-w-2xl mt-4 text-base sm:text-lg">
-          Two menus, one mission. Eat loud, drink loud.
-        </p>
-      </header>
+      <PageHeader
+        tag="The Menu"
+        title={<>Pick Your <span className="text-heat">Side</span></>}
+        description="Two menus, one mission. Eat loud, drink loud."
+      />
 
       {/* TWO PATHS */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
         {/* FOOD */}
         <article className="relative rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
           <PhotoSlot

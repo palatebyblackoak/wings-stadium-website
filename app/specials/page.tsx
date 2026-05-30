@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { SpecialCard } from "@/components/SpecialCard";
 import { HappyHourBanner } from "@/components/HappyHourBanner";
 import { SectionTag } from "@/components/SectionTag";
+import { PageHeader } from "@/components/PageHeader";
+import { SectionBox } from "@/components/SectionBox";
 import { weekly, happyHour, lunch } from "@/data/specials";
 
 export const metadata: Metadata = {
@@ -14,15 +16,11 @@ export const metadata: Metadata = {
 export default function SpecialsPage() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-16">
-      <header className="mb-10">
-        <SectionTag size="md" tilt={-2}>Every Night Hits Different</SectionTag>
-        <h1 className="heading-display text-5xl sm:text-7xl text-white mt-6">
-          Weekly <span className="text-heat">Specials</span>
-        </h1>
-        <p className="font-body text-white/80 max-w-2xl mt-4 text-base sm:text-lg">
-          The lineup that keeps McAllen coming back. Live DJ Wed–Fri. Game Day weekends.
-        </p>
-      </header>
+      <PageHeader
+        tag="Every Night Hits Different"
+        title={<>Weekly <span className="text-heat">Specials</span></>}
+        description="The lineup that keeps McAllen coming back. Live DJ Wed–Fri. Game Day weekends."
+      />
 
       {/* HAPPY HOUR */}
       <section className="mb-10">
@@ -30,8 +28,8 @@ export default function SpecialsPage() {
       </section>
 
       {/* $5 APPS + TEACHERS */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-12">
-        <article className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-7">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 mb-12">
+        <SectionBox className="p-5 sm:p-7">
           <SectionTag size="sm" tilt={-1.5}>{happyHour.apps.headline}</SectionTag>
           <h2 className="heading-display text-3xl sm:text-4xl text-white mt-5">
             $5 During Happy Hour
@@ -46,7 +44,7 @@ export default function SpecialsPage() {
               </li>
             ))}
           </ul>
-        </article>
+        </SectionBox>
 
         <article className="relative rounded-2xl border border-yellow-brand/40 bg-yellow-brand/[0.06] p-5 sm:p-7 overflow-hidden">
           <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-yellow-brand/20 blur-3xl" aria-hidden />
@@ -77,6 +75,8 @@ export default function SpecialsPage() {
         <img
           src="/photos/specials-mix-match.jpg"
           alt="Mix & Match Lunch — burger, chicken quesadilla, cobb salad, fries with sides for $8.49–$9.99"
+          loading="lazy"
+          decoding="async"
           className="w-full sm:w-56 lg:w-64 aspect-[4/5] object-contain self-stretch sm:self-center"
         />
       </section>
@@ -89,7 +89,7 @@ export default function SpecialsPage() {
             Mon → Sun
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {weekly.map((d) => (
             <SpecialCard key={d.key} day={d} />
           ))}
