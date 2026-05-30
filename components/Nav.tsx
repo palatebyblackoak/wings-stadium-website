@@ -33,7 +33,7 @@ export function Nav() {
         </div>
 
         <button
-          className="md:hidden p-2 text-white"
+          className="md:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 text-white"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
           aria-expanded={open}

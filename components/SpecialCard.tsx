@@ -38,7 +38,10 @@ export function SpecialCard({
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={gesture.src}
-          alt={gesture.alt}
+          alt=""
+          aria-hidden
+          loading="lazy"
+          decoding="async"
           className="pointer-events-none absolute -right-4 -bottom-4 w-28 sm:w-32 rotate-[14deg]"
         />
       )}

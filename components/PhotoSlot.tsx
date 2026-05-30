@@ -24,6 +24,8 @@ export function PhotoSlot({
       <img
         src={src}
         alt={label}
+        loading="lazy"
+        decoding="async"
         className={`${aspect} w-full object-cover rounded-xl ${className}`}
       />
     );
