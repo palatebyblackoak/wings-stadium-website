@@ -16,17 +16,17 @@ export function PageHeader({
   title,
   description,
   eyebrow,
-  className = "mb-10",
+  className = "mb-8 sm:mb-10",
 }: Props) {
   return (
     <header className={className}>
-      {eyebrow && <div className="mb-4">{eyebrow}</div>}
+      {eyebrow && <div className="mb-3 sm:mb-4">{eyebrow}</div>}
       <SectionTag size="md" tilt={tagTilt}>{tag}</SectionTag>
-      <h1 className="heading-display text-5xl sm:text-6xl md:text-7xl text-white mt-6">
+      <h1 className="heading-display text-5xl sm:text-6xl md:text-7xl text-white mt-5 sm:mt-6">
         {title}
       </h1>
       {description && (
-        <p className="font-body text-white/80 max-w-2xl mt-4 text-base sm:text-lg">
+        <p className="font-body text-white/80 max-w-2xl mt-3 sm:mt-4 text-base sm:text-lg">
           {description}
         </p>
       )}

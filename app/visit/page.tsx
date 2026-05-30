@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function VisitPage() {
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-16">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-8 sm:pt-12 pb-12 sm:pb-16">
       <PageHeader
         tag="Find Us"
         title={<>Visit the <span className="text-heat">Stadium</span></>}

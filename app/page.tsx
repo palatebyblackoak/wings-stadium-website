@@ -23,19 +23,20 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black/55" aria-hidden />
 
         {/* Foreground */}
-        <div className="relative max-w-6xl mx-auto w-full px-4 sm:px-6 pb-14 sm:pb-20 animate-riseIn">
+        <div className="relative max-w-6xl mx-auto w-full px-4 sm:px-6 pb-12 sm:pb-20 animate-riseIn">
           <h1
             className="heading-stack flex flex-col text-white text-[clamp(56px,13vw,180px)]"
             aria-label="An experience like no other in McAllen"
           >
             <span style={{ display: "block" }}>An</span>
             <span style={{ display: "block" }} className="text-red-brand">Experience</span>
-            <span style={{ display: "block" }}>Like No Other</span>
+            <span style={{ display: "block" }}>Like</span>
+            <span style={{ display: "block" }}>No Other</span>
             <span style={{ display: "block" }}>in McAllen.</span>
           </h1>
 
           {/* Specifics ticker — single inline strip with dot separators */}
-          <p className="mt-6 sm:mt-8 font-label text-[11px] sm:text-sm text-white/85 tracking-[0.18em] leading-relaxed">
+          <p className="mt-5 sm:mt-8 font-label text-[11px] sm:text-sm text-white/85 tracking-[0.18em] leading-relaxed">
             WALL-TO-WALL SCREENS
             <span aria-hidden className="text-yellow-brand mx-2 sm:mx-3">•</span>
             EVERY GAME, EVERY NIGHT
@@ -45,7 +46,7 @@ export default function HomePage() {
             11AM&nbsp;–&nbsp;LATE
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-6 sm:mt-8 flex flex-wrap gap-3">
             <CTAButton href="/menu" size="lg" variant="heat">
               See the Menu
             </CTAButton>
@@ -56,7 +57,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-16 sm:space-y-24 -mt-10 relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16 lg:space-y-24 -mt-6 sm:-mt-10 relative">
         {/* HAPPY HOUR BANNER */}
         <div className="animate-riseIn">
           <HappyHourBanner />
@@ -67,10 +68,10 @@ export default function HomePage() {
 
         {/* WEEKLY SPECIALS SNAPSHOT */}
         <section>
-          <div className="flex items-end justify-between gap-4 flex-wrap mb-8">
+          <div className="flex items-end justify-between gap-4 flex-wrap mb-6 sm:mb-8">
             <div>
               <SectionTag size="md" tilt={-1.5}>The Week</SectionTag>
-              <h2 className="heading-display text-5xl sm:text-6xl text-white mt-5">
+              <h2 className="heading-display text-4xl sm:text-5xl md:text-6xl text-white mt-4 sm:mt-5">
                 Every Night Hits Different
               </h2>
             </div>

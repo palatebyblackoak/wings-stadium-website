@@ -17,7 +17,7 @@ const TILTS = [-2.5, 1.5, -1.5, 2, -2, 1, -2.5, 1.5, -1.5, 2];
 
 export default function BarMenuPage() {
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-16">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-8 sm:pt-12 pb-12 sm:pb-16">
       <PageHeader
         tag="Full Bar"
         title={<>The <span className="text-heat">Bar Menu</span></>}

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function MenuHub() {
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-16">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-8 sm:pt-12 pb-12 sm:pb-16">
       <PageHeader
         tag="The Menu"
         title={<>Pick Your <span className="text-heat">Side</span></>}
