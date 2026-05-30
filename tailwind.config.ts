@@ -22,10 +22,9 @@ const config: Config = {
         body: ["var(--font-body)", "system-ui", "sans-serif"],
       },
       backgroundColor: {
-        // Brand "heat" used to be a yellow→orange→red gradient. Per brand
-        // direction, accents are now a single solid red. Keeping the
-        // bg-heat utility name so existing call-sites keep working.
-        heat: "var(--red)",
+        // Brand "heat" accent — solid yellow. Utility name kept stable so
+        // existing call-sites keep working.
+        heat: "var(--yellow)",
       },
       keyframes: {
         riseIn: {

@@ -36,17 +36,17 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-::selection { background: var(--red); color: var(--white); }
+::selection { background: var(--yellow); color: var(--black); }
 
 /* ---------- Utilities ---------- */
 @layer utilities {
-  /* Brand accent — was a yellow→orange→red gradient, now a single solid red
-     to keep the brand identity flat and on-mark. */
+  /* Brand accent — solid yellow. Red still anchors error states, social
+     hovers, and Wings Club signup chrome; everything else leans yellow. */
   .text-heat {
-    color: var(--red);
+    color: var(--yellow);
   }
   .ring-heat {
-    box-shadow: 0 10px 30px -10px rgba(238, 49, 53, 0.55);
+    box-shadow: 0 10px 30px -10px rgba(255, 214, 0, 0.55);
   }
   /* Grain noise + stadium-bg radial wash retired: per brand, no textures
      and no gradients. Solid backgrounds only. */
