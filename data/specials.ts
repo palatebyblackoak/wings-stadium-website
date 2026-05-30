@@ -131,7 +131,3 @@ export const weekly: DayLineup[] = [
   },
 ];
 
-export const weeklyByDay: Record<DayKey, DayLineup> = weekly.reduce(
-  (acc, d) => ({ ...acc, [d.key]: d }),
-  {} as Record<DayKey, DayLineup>,
-);

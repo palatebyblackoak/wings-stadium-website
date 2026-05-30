@@ -1,7 +1,6 @@
 import { CTAButton } from "@/components/CTAButton";
 import { HappyHourBanner } from "@/components/HappyHourBanner";
 import { CatchEveryGame } from "@/components/CatchEveryGame";
-import { TonightAtStadium } from "@/components/TonightAtStadium";
 import { SpecialsGrid } from "@/components/SpecialsGrid";
 import { LocationStrip } from "@/components/LocationStrip";
 import { SectionTag } from "@/components/SectionTag";
@@ -65,9 +64,6 @@ export default function HomePage() {
 
         {/* CATCH EVERY GAME */}
         <CatchEveryGame />
-
-        {/* TONIGHT AT THE STADIUM */}
-        <TonightAtStadium />
 
         {/* WEEKLY SPECIALS SNAPSHOT */}
         <section>
