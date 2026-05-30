@@ -26,12 +26,12 @@ export default function HomePage() {
         <div className="relative max-w-6xl mx-auto w-full px-4 sm:px-6 pb-14 sm:pb-20 animate-riseIn">
           <h1
             className="heading-stack flex flex-col text-white text-[clamp(56px,13vw,180px)]"
-            aria-label="Where McAllen watches the game"
+            aria-label="An experience like no other in McAllen"
           >
-            <span style={{ display: "block" }}>Where</span>
-            <span style={{ display: "block" }}>McAllen</span>
-            <span style={{ display: "block" }} className="text-heat">Watches</span>
-            <span style={{ display: "block" }}>the Game.</span>
+            <span style={{ display: "block" }}>An</span>
+            <span style={{ display: "block" }} className="text-red-brand">Experience</span>
+            <span style={{ display: "block" }}>Like No Other</span>
+            <span style={{ display: "block" }}>in McAllen.</span>
           </h1>
 
           {/* Specifics ticker — single inline strip with dot separators */}
