@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <>
       {/* HERO — full-bleed venue photo, stacked all-caps headline */}
-      <section className="relative min-h-[75vh] sm:min-h-[88vh] md:min-h-[92vh] overflow-hidden flex items-end">
+      <section className="relative min-h-[55vh] sm:min-h-[70vh] md:min-h-[80vh] overflow-hidden flex items-end">
         {/* Background photo */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
